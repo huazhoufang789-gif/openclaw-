@@ -1,5 +1,4 @@
-  logs/            # 运行日志"
-echo "  skills/          # OpenClaw技能"
+  skills/          # OpenClaw技能"
 
 echo ""
 echo "🌐 访问地址:"
