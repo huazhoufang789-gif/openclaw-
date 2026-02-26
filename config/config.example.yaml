@@ -1,0 +1,151 @@
+# OpenClaw更新监控配置文件示例
+# 复制此文件为 config.yaml 并修改配置
+
+# Twitter监控配置
+twitter:
+  # 是否启用Twitter监控
+  enable: true
+  
+  # 推文ID（可以指定多个，用逗号分隔）
+  tweet_id: "2026503611514069173"
+  
+  # 推文ID文件（每行一个ID，格式：tweet_id|checked_date|version|title）
+  tweet_file: "config/twitter_ids.txt"
+  
+  # 输出目录
+  output_dir: "./output/twitter"
+  
+  # 是否启用中文翻译
+  translate: true
+  
+  # 检查间隔（秒），用于定时任务
+  check_interval: 3600
+
+# GitHub监控配置
+github:
+  # 是否启用GitHub监控
+  enable: true
+  
+  # 仓库名称（格式：owner/repo）
+  repo: "openclaw/openclaw"
+  
+  # 输出目录
+  output_dir: "./output/github"
+  
+  # 是否启用中文翻译
+  translate: true
+  
+  # 是否获取所有发布（而不仅是最新）
+  all_releases: false
+  
+  # 发布数量限制（当all_releases为true时生效）
+  limit: 5
+  
+  # 检查间隔（秒）
+  check_interval: 3600
+
+# 小红书内容生成配置
+xiaohongshu:
+  # 是否启用小红书内容生成
+  enable: true
+  
+  # 输出目录
+  output_dir: "./output/xiaohongshu"
+  
+  # 是否包含链接（小红书通常不允许外部链接）
+  include_links: false
+  
+  # 默认标签
+  default_tags:
+    - "OpenClaw"
+    - "AIGC"
+    - "AIAgent"
+    - "Clawdbot"
+    - "AI助手"
+    - "技术更新"
+    - "AI工具"
+    - "编程必备"
+    - "开源项目"
+    - "开发者工具"
+  
+  # 最大内容长度（字符）
+  max_content_length: 2000
+  
+  # 是否生成发布指南
+  generate_guide: true
+
+# 流水线配置
+pipeline:
+  # 日志级别：DEBUG, INFO, WARNING, ERROR
+  log_level: "INFO"
+  
+  # 是否启用缓存
+  enable_cache: true
+  
+  # 缓存目录
+  cache_dir: "./cache"
+  
+  # 缓存过期时间（天）
+  cache_expiry_days: 7
+  
+  # 是否生成汇总报告
+  generate_summary: true
+  
+  # 汇总报告输出目录
+  summary_dir: "./output"
+
+# 定时任务配置（用于cron）
+cron:
+  # 是否启用定时任务
+  enabled: false
+  
+  # 定时表达式（cron格式）
+  schedule: "0 9 * * *"  # 每天上午9点
+  
+  # 定时任务输出日志
+  log_file: "./logs/cron.log"
+
+# 网络配置
+network:
+  # 请求超时时间（秒）
+  timeout: 30
+  
+  # 重试次数
+  retries: 3
+  
+  # 重试延迟（秒）
+  retry_delay: 5
+  
+  # 用户代理
+  user_agent: "OpenClaw-Update-Monitor/1.0"
+
+# 翻译配置
+translation:
+  # 翻译服务：simple（简单关键词替换）, google（需要API密钥）, deepl（需要API密钥）
+  service: "simple"
+  
+  # Google翻译API密钥（当service为google时需填写）
+  google_api_key: ""
+  
+  # DeepL翻译API密钥（当service为deepl时需填写）
+  deepl_api_key: ""
+  
+  # 源语言（自动检测设为auto）
+  source_lang: "auto"
+  
+  # 目标语言
+  target_lang: "zh"
+
+# 调试配置
+debug:
+  # 是否启用调试模式
+  enabled: false
+  
+  # 调试输出目录
+  output_dir: "./debug"
+  
+  # 是否保存原始响应
+  save_raw_responses: false
+  
+  # 是否打印详细日志
+  verbose: false

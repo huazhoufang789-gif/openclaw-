@@ -1,0 +1,9 @@
+# OpenClaw官方推文ID数据库
+# 格式：tweet_id|checked_date|version|title
+# 每行一条记录，以#开头的行是注释
+
+# v2026.2.24 发布推文
+2026503611514069173|2026-02-26|v2026.2.24|OpenClaw 2026.2.24发布
+
+# 添加新推文ID时使用相同格式：
+# tweet_id|YYYY-MM-DD|version|description
